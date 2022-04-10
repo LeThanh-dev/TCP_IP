@@ -3,10 +3,9 @@ var net = require('net');
 
 const port = 8080;
 const host = 'localhost';
-
 // Tạo Server
 var server = new net.Server()
-let onlineSameIP = 0
+
 // Hàm đến ngược đóng Server
 const countDown = (time = 0) => {
 	let loop = ""
@@ -17,8 +16,8 @@ const countDown = (time = 0) => {
 			console.log("Kết nối sẽ đóng lại!");
 			clearInterval(loop)
 			// Đóng server
-			server.close()
 			console.log("Server đã đóng!");
+			server.close()
 			process.exit()
 		}
 		countCurrent -= 1
@@ -49,9 +48,9 @@ server.on('connection', (client) => {
 	// Gửi lời chào đến Client khi có kết nối
 	client.write(`Xin chào!\n`)
 	console.log("--------------------------");
-
+	
 	// Hiện thị thông tin kết nối
-	console.log(`Client có địa chỉ ${client.localAddress} - Cổng: ${client.localPort}`);
+	console.log(`Client có địa chỉ ${client.remoteAddress} - Cổng: ${client.remotePort}`);
 
 	// Gọi hàm lấy dữ liệu kết nối hiện tại
 	getClientOnline().then((data) => {
