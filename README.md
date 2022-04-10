@@ -4,7 +4,7 @@ B1: Chạy Server bằng lệnh "node server.js"
 B2: Chạy Client bằng lệnh "node client.js"
 
                              ********         MÔ TẢ CODE        ********  
-                             
+
 Trong từng File code đã mô tả về ý nghĩa code bằng các comment line
 **************************
 TỔNG QUAN LẠI TỪNG Ý ĐỀ BÀI LÀM:
@@ -20,4 +20,4 @@ Khi chạy code:
 
 2. Phía Client
 + In ra đoạn text: Đã kết nối tới Server để thông báo truy cập thành công.
-+ Chận được thông báo "Xin chào" từ phía Server gửi sang khi bắt đầu truy cập.
++ Nhận được thông báo "Xin chào" từ phía Server gửi sang khi bắt đầu truy cập.
