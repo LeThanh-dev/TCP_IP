@@ -37,11 +37,11 @@ server.listen({ port: port, host: host }, () => {
 });
 
 //  Gọi hàm đóng Server
-countDown(5)
+countDown(30)
 // Gọi hàm lấy dữ liệu kết nối hiện tại
 getClientOnline().then((data) => {
 	console.log("--------------------------");
-	console.log("Online:", data);
+	console.log("Số kết nối đang hoạt động:", data);
 	console.log("--------------------------");
 })
 server.on('connection', (client) => {
@@ -55,7 +55,7 @@ server.on('connection', (client) => {
 
 	// Gọi hàm lấy dữ liệu kết nối hiện tại
 	getClientOnline().then((data) => {
-		console.log("Online:", data);
+		console.log("Số kết nối đang hoạt động:", data);
 		console.log("--------------------------");
 	})
 	console.log("--------------------------");
@@ -64,7 +64,7 @@ server.on('connection', (client) => {
 	client.on("error", err => {
 		console.log(err);
 		getClientOnline().then((data) => {
-			console.log("Online:", data);
+			console.log("Số kết nối đang hoạt động:", data);
 		})
 
 	})
